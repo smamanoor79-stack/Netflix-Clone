@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-top-fade"></div>
+    <div class="hero-bottom-fade"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <span class="netflix-logo">NETFLIX</span>
+      <a href="#" class="sign-in-btn">Sign In</a>
+    </nav>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1 class="hero-title">Unlimited movies, TV shows, and more</h1>
+      <p class="hero-subtitle">Starts at Rs 250. Cancel anytime.</p>
+      <p class="hero-desc">Ready to watch? Enter your email to create or restart your membership.</p>
+      <div class="email-form">
+        <input class="email-input" type="email" placeholder="Email address" />
+        <button class="get-started-btn">Get Started <span class="arrow">&#8250;</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curve Divider -->
+   
+<svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="transparent"/>
+      <stop offset="30%" stop-color="#b20710"/>
+      <stop offset="50%" stop-color="#e40475"/>
+      <stop offset="70%" stop-color="#ff0080"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </linearGradient>
+    <radialGradient id="innerGlow" cx="50%" cy="0%" r="50%">
+      <stop offset="0%" stop-color="rgba(120,0,180,0.35)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <!-- Dark arc -->
+  <path d="M0,80 Q720,20 1440,80 L1440,0 L0,0 Z" fill="#141414"/>
+  <!-- Inner purple glow at the bottom of the arc -->
+  <ellipse cx="720" cy="75" rx="500" ry="30" fill="url(#innerGlow)" opacity="0.6"/>
+  <!-- Pink/red glow line -->
+  <path d="M0,80 Q720,20 1440,80" fill="none" stroke="url(#glowGrad)" stroke-width="3"/>
+</svg>
+
+  <!-- TRENDING NOW SECTION -->
+  <section class="trending-section">
+    <h2 class="section-title">Trending Now</h2>
+
+    <div class="slider-wrapper">
+      <button class="slider-btn prev-btn" id="prevBtn">&#8249;</button>
+
+      <div class="cards-track" id="cardsTrack">
+
+        <div class="card-item">
+          <span class="rank">1</span>
+          <div class="card-poster">
+            <img src="images/img1.jpg" alt="Movie 1">
+          </div>
+        </div>
+
+        <div class="card-item">
+          <span class="rank">2</span>
+          <div class="card-poster">
+            <img src="images/img2.webp" alt="Movie 2">
+          </div>
+        </div>
+
+        <div class="card-item">
+          <span class="rank">3</span>
+          <div class="card-poster">
+            <img src="images/img3.jpg" alt="Movie 3">
+          </div>
+        </div>
+
+        <div class="card-item">
+          <span class="rank">4</span>
+          <div class="card-poster">
+            <img src="images/img4.webp" alt="Movie 4">
+          </div>
+        </div>
+
+        <div class="card-item">
+          <span class="rank">5</span>
+          <div class="card-poster">
+            <img src="images/img5.webp" alt="Movie 5">
+          </div>
+        </div>
+
+        <div class="card-item">
+          <span class="rank">6</span>
+          <div class="card-poster">
+            <img src="images/img6.webp" alt="Movie 6">
+          </div>
+        </div>
+
+      </div>
+
+      <button class="slider-btn next-btn" id="nextBtn">&#8250;</button>
+    </div>
+  </section>
+
+  <script>
+    const track = document.getElementById('cardsTrack');
+    const cardWidth = () => track.querySelector('.card-item').offsetWidth + 16;
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      track.scrollBy({ left: cardWidth() * 2, behavior: 'smooth' });
+    });
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      track.scrollBy({ left: -cardWidth() * 2, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- MORE REASONS TO JOIN -->
+<section class="reasons-section">
+  <h2 class="section-title">More Reasons to Join</h2>
+  <div class="reasons-grid">
+
+    <div class="reason-card">
+      <div class="reason-text">
+        <h3 class="reason-title">Enjoy on your TV</h3>
+        <p class="reason-desc">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+      </div>
+      <div class="reason-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-text">
+        <h3 class="reason-title">Download your shows to watch offline</h3>
+        <p class="reason-desc">Save your favorites easily and always have something to watch.</p>
+      </div>
+      <div class="reason-icon reason-icon--download">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12l4 4 4-4"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-text">
+        <h3 class="reason-title">Watch everywhere</h3>
+        <p class="reason-desc">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+      </div>
+      <div class="reason-icon reason-icon--watch">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="reason-card">
+      <div class="reason-text">
+        <h3 class="reason-title">Create profiles for kids</h3>
+        <p class="reason-desc">Send kids on adventures with their favorite characters in a space made just for them — free with your membership.</p>
+      </div>
+      <div class="reason-icon reason-icon--kids">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>What is Netflix?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more — on thousands of internet-connected devices. You can watch as much as you want, whenever you want, without a single ad — all for one low monthly price.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How much does Netflix cost?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device. Plans start at Rs 250 per month. No extra costs, no contracts.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Where can I watch?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>How do I cancel?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees — start or stop your account anytime.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>What can I watch on Netflix?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        <span>Is Netflix good for kids?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space. Kids profiles come with PIN-protected parental controls.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+    const icon = btn.querySelector('.faq-icon');
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-answer').style.maxHeight = null;
+      i.querySelector('.faq-icon').textContent = '+';
+    });
+
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      icon.textContent = '×';
+    }
+  }
+</script>
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+
+  <!-- Email CTA -->
+  <div class="footer-cta">
+    <p class="footer-cta-text">Ready to watch? Enter your email to create or restart your membership.</p>
+    <div class="email-form">
+      <input class="email-input" type="email" placeholder="Email address" />
+      <button class="get-started-btn">Get Started <span class="arrow">&#8250;</span></button>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <a href="#">Questions? Contact us.</a>
+  </div>
+
+  <div class="footer-grid">
+    <ul>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Investor Relations</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Speed Test</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Help Center</a></li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Cookie Preferences</a></li>
+      <li><a href="#">Legal Notices</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Account</a></li>
+      <li><a href="#">Ways to Watch</a></li>
+      <li><a href="#">Corporate Information</a></li>
+      <li><a href="#">Only on Netflix</a></li>
+    </ul>
+    <ul>
+      <li><a href="#">Media Center</a></li>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Language Selector -->
+  <div class="footer-lang">
+    <select class="lang-select">
+      <option>English</option>
+      <option>اردو</option>
+    </select>
+  </div>
+
+  <p class="footer-region">Netflix Pakistan</p>
+  <p class="footer-recaptcha">This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+
+</footer>
+
+</body>
+</html>
